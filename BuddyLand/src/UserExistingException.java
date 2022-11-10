@@ -1,6 +1,6 @@
 
 public class UserExistingException extends Exception{
-	UserExistingException(String errorMessage) {
-		super((errorMessage));
+	UserExistingException(String err) {
+		super((err));
 	}
 }

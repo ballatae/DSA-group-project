@@ -17,15 +17,24 @@ public class BuddyLand {
 		application.addBuddy(sotiria);
 		application.addBuddy(elisavet);
 		
-		application.addConnection(etnik, tringa);
-		application.addConnection(etnik, elisavet);
-		
+		application.addFriend(etnik, tringa);
+		application.addFriend(etnik, elisavet);
+	
 		System.out.println(application.getBuddiesNumber(etnik));
 		
-		application.removeConnection(etnik, elisavet);
+		application.removeFriend(etnik, elisavet);
 		
-		System.out.println(application.getBuddiesNumber(etnik));
+		System.out.println(application.getBuddiesNumber(tringa));
+		
+		try {
+			System.out.println(application.searchBuddyByName(etnik, "elisavet"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
+
+	
 
 }
