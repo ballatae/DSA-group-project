@@ -1,18 +1,20 @@
 
-public class Buddy{
-	private String username, password, firstName, lastName, email;
+public class Buddy {
+	private String firstName, lastName, email, userName, password;
 
-	public Buddy(String username, String password, String firstName, String lastName, String email) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-	}
 
-	public String getUsername() {
-		return username;
+	Buddy(String firstName, String lastName, String email, String userName, String password) {
+		try {
+			setEmail(email);
+			setUserName(userName);
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.password = password;
+		} catch (InvalidEmailExcpetion e) {
+			System.out.println("Email is not valid please try again.");
+		} catch (UserExistingException e) {
+			System.out.println("This user already exists, try another user.");
+		}
 	}
 
 	public String getFirstName() {
@@ -27,12 +29,41 @@ public class Buddy{
 		return email;
 	}
 
-	@Override
-	public String toString() {
-		return "Buddy [username=" + username + ", password=" + password + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", email=" + email + "]";
+	public String getUserName() {
+		return userName;
 	}
-	
-	
-	
+
+	public String getPassword() {
+		return password;
+	}
+
+	private void setEmail(String email) throws InvalidEmailExcpetion {
+		if (email.contains("@") && email.contains("."))
+			this.email = email;
+		else {
+			throw new InvalidEmailExcpetion("Not a valid email");
+		}
+	}
+
+	private void setUserName(String userName) throws UserExistingException {
+		for (Buddy buddy : BuddyList.getConnections().keySet()) {
+			if (buddy.getUserName().equals(userName)) {
+				throw new UserExistingException(
+						"Username already used. Choose another one to create a buddy account");
+			}
+		}
+		this.userName = userName;
+	}
 }
+
+//class InvalidEmailExcpetion extends Exception {
+//	InvalidEmailExcpetion(String errorMessage) {
+//		super((errorMessage));
+//	}
+//}
+
+//class UserExistingException extends Exception {
+//	UserExistingException(String errorMessage) {
+//		super((errorMessage));
+//	}
+//}
