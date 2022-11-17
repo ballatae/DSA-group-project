@@ -1,5 +1,5 @@
 
-public class NoFriendFound extends Exception{
+public class NoFriendFound extends Exception {
 	NoFriendFound(String err) {
 		super((err));
 	}

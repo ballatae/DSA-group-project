@@ -1,4 +1,3 @@
-
 public class Buddy {
 	private String firstName, lastName, email, userName, password;
 
@@ -58,7 +57,7 @@ public class Buddy {
 		return "Buddy [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", userName="
 				+ userName + ", password=" + password + "]";
 	}
-	
+
 	public String weFoundYourBuddyFriend() {
 		return "We found your friend with username: " + userName + "\n" + "email" + email;
 	}

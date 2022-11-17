@@ -1,5 +1,7 @@
+import java.util.List;
+import java.util.Map;
 
-public interface BuddyListInterface {
+public interface BuddyManagmentInterface {
 
 	public void addBuddy(Buddy buddy);
 

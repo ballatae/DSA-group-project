@@ -32,6 +32,13 @@ public class BuddyLand {
 			e.printStackTrace();
 		}
 
+		try {
+			System.out.println(application.searchBuddyByName(etnik, "rexhepaj"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 
 }

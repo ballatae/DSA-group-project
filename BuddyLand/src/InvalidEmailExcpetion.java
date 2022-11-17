@@ -1,7 +1,6 @@
 
 public class InvalidEmailExcpetion extends Exception {
-		InvalidEmailExcpetion(String err) {
-			super((err));
-		}
+	InvalidEmailExcpetion(String err) {
+		super((err));
 	}
-
+}
