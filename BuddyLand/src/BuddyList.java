@@ -7,7 +7,7 @@ public class BuddyList implements BuddyManagmentInterface {
 		super();
 	}
 
-	public static Map<Buddy, List<Buddy>> getConnections() {
+	public static Map<Buddy, List<Buddy>> getAllUsers() {
 		return connections;
 	}
 

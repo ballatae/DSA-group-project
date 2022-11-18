@@ -44,7 +44,7 @@ public class Buddy {
 	}
 
 	private void setUserName(String userName) throws UserExistingException {
-		for (Buddy buddy : BuddyList.getConnections().keySet()) {
+		for (Buddy buddy : BuddyList.getAllUsers().keySet()) {
 			if (buddy.getUserName().equals(userName)) {
 				throw new UserExistingException("Username already used. Choose another one to create a buddy account");
 			}
